@@ -28,7 +28,11 @@ export function EventCard({ event }: EventCardProps) {
   const external = isExternalUrl(event.href);
 
   return (
-    <motion.article variants={scaleIn} className="h-full">
+    <motion.article
+      id={event.id}
+      variants={scaleIn}
+      className="h-full scroll-mt-28"
+    >
       <Card className="group flex h-full flex-col overflow-hidden p-0 transition duration-500 hover:-translate-y-1 hover:shadow-glow">
         <div className="relative aspect-[16/9] overflow-hidden">
           <Image

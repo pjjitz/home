@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { NavHashLink } from "@/components/layout/nav-hash-link";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { HeroBackground } from "@/features/home";
 import { siteConfig } from "@/config/site";
 import { heroContent } from "@/data/config";
@@ -54,10 +55,7 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.a
-          href="#links"
-          className="mt-16 inline-flex items-center gap-2 text-sm text-muted transition hover:text-accent"
-          aria-label="Rolar para links"
+        <motion.div
           {...(prefersReducedMotion
             ? {}
             : {
@@ -66,9 +64,14 @@ export function HeroSection() {
                 transition: { delay: 1, duration: 0.8 },
               })}
         >
-          <span>Explorar</span>
-          <ChevronDown className="h-4 w-4 animate-bounce" />
-        </motion.a>
+          <NavHashLink
+            href="/#links"
+            className="mt-16 inline-flex items-center gap-2 text-sm text-muted transition hover:text-accent"
+          >
+            <span>Explorar</span>
+            <ChevronDown className="h-4 w-4 animate-bounce" aria-hidden />
+          </NavHashLink>
+        </motion.div>
       </div>
     </section>
   );

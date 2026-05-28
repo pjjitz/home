@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { NavHashLink } from "@/components/layout/nav-hash-link";
 import { SiteLogo } from "@/components/layout/site-logo";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -24,6 +25,8 @@ export function SiteHeader() {
     };
   }, [mobileOpen]);
 
+  const closeMobile = () => setMobileOpen(false);
+
   return (
     <header
       className={cn(
@@ -32,29 +35,29 @@ export function SiteHeader() {
       )}
     >
       <div className="container-wide flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link
-          href="#inicio"
+        <NavHashLink
+          href="/#inicio"
           className="group flex items-center gap-3"
-          aria-label={`${siteConfig.name}, voltar ao início`}
+          onNavigate={closeMobile}
         >
           <SiteLogo className="transition group-hover:scale-105" />
           <span className="hidden font-display text-sm font-semibold tracking-tight sm:block">
             {siteConfig.name}
           </span>
-        </Link>
+        </NavHashLink>
 
         <nav
           className="hidden items-center gap-1 md:flex"
           aria-label="Navegação principal"
         >
           {siteConfig.nav.map((item) => (
-            <Link
+            <NavHashLink
               key={item.href}
               href={item.href}
               className="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-foreground"
             >
               {item.label}
-            </Link>
+            </NavHashLink>
           ))}
         </nav>
 
@@ -78,14 +81,14 @@ export function SiteHeader() {
         >
           <div className="container-wide flex flex-col gap-1 px-4 py-4">
             {siteConfig.nav.map((item) => (
-              <Link
+              <NavHashLink
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileOpen(false)}
+                onNavigate={closeMobile}
                 className="rounded-lg px-3 py-3 text-base text-foreground hover:bg-surface"
               >
                 {item.label}
-              </Link>
+              </NavHashLink>
             ))}
           </div>
         </nav>

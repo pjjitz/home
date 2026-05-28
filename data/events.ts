@@ -3,8 +3,7 @@ import { contactConfig } from "@/config/contact";
 
 /**
  * Edite este arquivo para adicionar ou alterar eventos.
- * date: formato ISO 8601 quando houver data confirmada.
- * dateLabel: texto exibido quando a data ainda não está definida.
+ * date / endDate: formato ISO 8601 (ex: "2026-07-23T08:00:00-03:00")
  */
 export const events: PjjEvent[] = [
   {
@@ -12,12 +11,14 @@ export const events: PjjEvent[] = [
     title: "Acamps 2026",
     description:
       "O acampamento de jovens Shalom em Imperatriz. Dias de louvor, formação, esporte e comunhão.",
-    dateLabel: "2026",
-    location: "Imperatriz, MA",
-    href: contactConfig.acampsForm,
+    date: "2026-07-23T08:00:00-03:00",
+    endDate: "2026-07-26T20:00:00-03:00",
+    location: "Chácara Israel, Imperatriz, MA",
+    href: contactConfig.acampsPage,
     banner: "/images/acamps.png",
     status: "registration",
     badge: "Inscrições abertas",
+    showCountdown: true,
   },
   {
     id: "after-acamps-2026",

@@ -9,6 +9,7 @@ export const contactConfig = {
     handle: "juventudeshimperatriz",
     href: "https://instagram.com/juventudeshimperatriz",
   },
-  acampsForm: "https://forms.gle/xb2yVi5GBqRQQqhx9",
+  /** Página de inscrição (link curto para compartilhar) */
+  acampsPage: "/acamps2026",
   formacaoUrl: "https://comshalom.org/formacao/",
 } as const;

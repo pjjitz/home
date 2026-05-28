@@ -38,14 +38,15 @@ export const siteConfig = {
     "CJS",
   ],
   nav: [
-    { label: "Início", href: "#inicio" },
-    { label: "Links", href: "#links" },
-    { label: "Eventos", href: "#eventos" },
-    { label: "Galeria", href: "#galeria" },
-    { label: "Sobre", href: "#sobre" },
+    { label: "Início", href: "/#inicio" },
+    { label: "Links", href: "/#links" },
+    { label: "Acamps 2026", href: "/#acamps-2026" },
+    { label: "Eventos", href: "/#eventos" },
+    { label: "Galeria", href: "/#galeria" },
+    { label: "Sobre", href: "/#sobre" },
   ],
   cta: {
-    secondary: { label: "Conheça o PJJ", href: "#sobre" },
+    secondary: { label: "Conheça o PJJ", href: "/#sobre" },
   },
   footer: {
     tagline: "Juventude viva. Encontro real. Cristo no centro.",

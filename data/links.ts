@@ -19,10 +19,9 @@ export const quickLinks: QuickLink[] = [
     id: "inscricao-acamp",
     title: "Inscrições Acamp's",
     description: "Vagas, valores e informações do Acamps 2026.",
-    href: contactConfig.acampsForm,
+    href: contactConfig.acampsPage,
     icon: "tent",
     featured: true,
-    external: true,
   },
   {
     id: "playlist-louvor",
@@ -44,7 +43,7 @@ export const quickLinks: QuickLink[] = [
     id: "missao",
     title: "Missão & Serviço",
     description: "Ações evangelizadoras e oportunidades de servir com a juventude.",
-    href: "#sobre",
+    href: "/#sobre",
     icon: "heart-handshake",
   },
   {
